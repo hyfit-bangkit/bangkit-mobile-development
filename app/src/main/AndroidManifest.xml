@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -16,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScannerApp"
         tools:ignore="ExtraText">
-        tools:targetApi="31">
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityResult"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScannerActivity"></activity>
+        <activity android:name=".ScannerActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <ImageView
+            android:id="@+id/ivImageFood"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:contentDescription="Image Food"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/tvNameFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_food"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvNutritionFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nutrition"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvCaloriFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calori"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descriptions"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvDescFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_food"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Confirm"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

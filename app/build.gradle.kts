@@ -39,6 +39,8 @@ android {
 
     buildFeatures {
         compose = true
+        viewBinding = true
+        mlModelBinding = true
     }
 }
 
@@ -55,6 +57,13 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.tensorflow.lite.support)
+    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.glide)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.espresso.core)
 
     // Testing dependencies
     testImplementation(libs.junit)
@@ -66,8 +75,15 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // CameraX dependencies (updated version)
-    implementation("androidx.camera:camera-core:1.1.0") // Versi lebih baru
-    implementation("androidx.camera:camera-camera2:1.1.0")
-    implementation("androidx.camera:camera-lifecycle:1.1.0")
-    implementation("androidx.camera:camera-view:1.1.0")
+    implementation("androidx.camera:camera-core:1.4.0") // Versi lebih baru
+    implementation("androidx.camera:camera-camera2:1.4.0")
+    implementation("androidx.camera:camera-lifecycle:1.4.0")
+    implementation("androidx.camera:camera-view:1.4.0")
+    implementation("androidx.camera:camera-extensions:1.4.0")
+
+    //okttp3
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
+
 }
