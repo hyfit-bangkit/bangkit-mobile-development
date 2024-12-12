@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/flPhoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ingredient_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_foreground" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wheat Flour"
+        android:textSize="12sp"
+        android:textColor="#1D1617"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/flPhoto"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100gr"
+        android:textSize="10sp"
+        android:textColor="#7B6F72"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
