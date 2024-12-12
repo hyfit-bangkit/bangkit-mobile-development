@@ -2,51 +2,62 @@ package com.example.scannerapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var bottomNavView: BottomNavigationView
+    private lateinit var ivCamera: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Button to Camera Scanner Feature (ubah menjadi ImageButton)
-        val btnToScanner: ImageButton = findViewById<ImageButton>(R.id.btnToScanner) // Sesuaikan tipe menjadi ImageButton
-        btnToScanner.setOnClickListener {
-            // Cek apakah activity ScannerActivity sudah didefinisikan
-            try {
-                val intent = Intent(this, ScannerActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception) {
-                Toast.makeText(this, "Error opening Scanner: ${e.message}", Toast.LENGTH_SHORT).show()
+        bottomNavView = findViewById(R.id.bottomNavigationView)
+        ivCamera = findViewById(R.id.ivCamera)
+
+        // Set up the bottom navigation listener
+        bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeFragment -> {
+                    openFragment(HomeFragment())
+                    true
+                }
+                R.id.activityFragment -> {
+                    openFragment(ActivityFragment())
+                    true
+                }
+                R.id.searchFragment -> {
+                    openFragment(SearchFragment())
+                    true
+                }
+                R.id.profileFragment -> {
+                    openFragment(ProfileFragment())
+                    true
+                }
+                else -> false
             }
         }
 
-        // Button to navigate Home (no action needed since it's already home)
-        val navHome = findViewById<Button>(R.id.navHome)
-        navHome.setOnClickListener {
-            // Placeholder: Jika sudah di homepage, bisa dihapus atau diubah untuk tujuan lain
-            Toast.makeText(this, "You're already on the homepage", Toast.LENGTH_SHORT).show()
+        // Default fragment
+        if (savedInstanceState == null) {
+            openFragment(HomeFragment())
         }
 
-        findViewById<ImageButton>(R.id.btnToScanner).setOnClickListener {
-            val intent = Intent(this@MainActivity, ScannerActivity::class.java)
+        // Camera button click
+        ivCamera.setOnClickListener {
+            val intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
         }
+    }
 
-        // Button to Camera Scanner in Bottom Navigation
-        val navScanner = findViewById<Button>(R.id.navScanner)
-        navScanner.setOnClickListener {
-            // Cek apakah activity ScannerActivity sudah didefinisikan
-            try {
-                val intent = Intent(this, ScannerActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception) {
-                Toast.makeText(this, "Error opening Scanner: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmentContainer, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
