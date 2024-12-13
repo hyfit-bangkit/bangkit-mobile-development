@@ -32,7 +32,7 @@ The Hy-Fit mobile app is built using the following technologies:
 ## How to Run?
 To install and run the Hy-Fit mobile app on your local machine, follow the steps below:
 1. Clone the project repository from GitHub:
- ```https://github.com/hyfit-bangkit/bangkit-mobile-development.git```
+ https://github.com/hyfit-bangkit/bangkit-mobile-development.git
 2. Open the project in Android Studio.
 3. Build and run the app on an emulator or real device.
 For more detailed instructions and troubleshooting tips, please consult the project's GitHub repository: GitHub Repository
